@@ -1,0 +1,25 @@
+CREATE DATABASE Empresa;
+
+USE Empresa;
+
+CREATE TABLE Departamento(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(30) NOT NULL,
+endereço VARCHAR(30)
+);
+
+
+CREATE TABLE Funcionario(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(30) NOT NULL,
+idade INT NOT NULL,
+id_departamento INT,
+
+FOREIGN KEY (id_departamento)
+REFERENCES Departamento(id)
+);
+
+
+ALTER TABLE Funcionario ADD cpf VARCHAR(30) UNIQUE NOT NULL;
+ALTER TABLE Funcionario ADD sexo VARCHAR(30);
+
